@@ -1,0 +1,24 @@
+.form-div { margin-top: 100px; border: 1px solid #e0e0e0; }
+#profileDisplay { display: block; height: 150px; width: 40%; margin: 0px auto; border-radius: 20%; }
+.img-placeholder {
+  width: 40%;
+  color: white;
+  height: 50%;
+  background: rgb(90, 86, 86);
+  opacity: .7;
+  height: 150px;
+  border-radius: 20%;
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+.img-placeholder h4 {
+  margin-top: 40%;
+  color: white;
+}
+.img-div:hover .img-placeholder {
+  display: block;
+  cursor: pointer;
+}

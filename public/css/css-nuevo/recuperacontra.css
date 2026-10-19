@@ -1,0 +1,237 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #7F7FD5;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, rgb(48, 71, 241), rgb(39, 173, 210), #7F7FD5);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgb(48, 71, 241), rgb(39, 173, 210), #7F7FD5);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.olvidocontra {
+    color: aqua;
+}
+
+/* Estilos para centrar los botones horizontalmente */
+.button-container {
+    text-align: center;
+}
+
+.button {
+    /* Elimina la propiedad 'left' */
+    left: initial;
+    /* Agrega márgenes izquierdo y derecho automáticos para centrar horizontalmente */
+    margin: 0 auto;
+}
+
+
+.contenedor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    min-width: 600px;
+    padding: 40px;
+    background: #0b345a;
+    transform: translate(-50%, -50%);
+    /*background: rgba(0, 0, 0, .5);*/
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+
+.contenedor h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.contenedor .usuario {
+    position: relative;
+    display: flex; /* Usamos flexbox para alinear elementos verticalmente */
+    align-items: center; /* Alineamos verticalmente el contenido */
+}
+
+.contenedor .usuario input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.contenedor .usuario label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.contenedor .usuario input:focus ~ label,
+.contenedor .usuario input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: aqua;
+    font-size: 12px;
+}
+
+.contenedor .usuario span {
+    position: absolute;
+    right: 0; /* Alineamos el icono a la derecha */
+    bottom: 15px; /* Agregamos un margen inferior para separar el icono de la línea inferior del campo de entrada */
+    color: aqua;
+    /* Otros estilos para el icono */
+}
+
+
+.button2 {
+    margin: 10px;
+    top: 10px;
+    position: relative;
+    padding: 10px 85px;
+    border: none;
+    outline: none;
+    background: rgb(30, 166, 50);
+    color: #713185;
+    cursor: pointer;
+    transition: .5s;
+    overflow: hidden;
+}
+
+
+button {
+    margin-top: 35px;
+    margin: 10px;
+    position: relative;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    background: rgb(6, 101, 253);
+    color: #713185;
+    cursor: pointer;
+    transition: .5s;
+    overflow: hidden;
+}
+
+.button h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+button:hover {
+    background: #28E6F2;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5 px aqua,
+        0 0 25 px aqua,
+        0 0 50 px aqua,
+        0 0 100 px aqua;
+}
+
+button span {
+    position: absolute;
+    background: #fff;
+    transition: .5s;
+    display: block;
+}
+
+button span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, aqua);
+    animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+button span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, aqua);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s;
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+button span:nth-child(3) {
+    right: -100%;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(270deg, transparent, aqua);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s;
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+button span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, aqua);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s;
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}
+

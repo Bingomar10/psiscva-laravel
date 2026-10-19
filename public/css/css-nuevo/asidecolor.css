@@ -1,0 +1,56 @@
+/* Cambiar el color de fondo del aside con clase custom */
+.navbar-custom1 {
+  background-color: #041a2f;
+  /* Cambia este valor al color deseado */
+}
+
+.navbar-custom2 {
+  background-color: #9cc6f9;
+  /* Cambia este valor al color deseado */
+}
+
+.navbar-custom3 {
+  /*background: -webkit-linear-gradient(to right, rgb(48, 71, 241), rgb(39, 173, 210), #7F7FD5);*/
+  /* Chrome 10-25, Safari 5.1-6 */
+  /*background: linear-gradient(to right, rgb(48, 71, 241), rgb(39, 173, 210), #7F7FD5);*/
+  background: rgb(32, 136, 223);
+  /*background: linear-gradient(90deg, rgba(32, 136, 223, 1) 0%, rgba(28, 229, 221, 1) 50%, rgba(94, 126, 229, 1) 100%);*/
+  background: linear-gradient(90deg, rgba(32, 136, 223, 1) 0%, rgb(54, 211, 206) 50%, rgba(94, 126, 229, 1) 100%);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+/*Color contenido tabla*/
+.navbar-custom4 {
+  background-color: #d3def7;
+  /* Cambia este valor al color deseado */
+}
+
+
+.navbar-custom5 {
+
+  /* Cambia este valor al color deseado */
+  background: rgb(104,181,251);
+  background: linear-gradient(90deg, rgba(104,181,251,1) 0%, rgba(210,150,252,1) 100%);
+
+}
+
+/*Color wrapper*/
+.navbar-custom6 {
+  background: rgb(226,244,246);
+  background: linear-gradient(0deg, rgba(226,244,246,1) 0%, rgba(240,234,249,1) 100%);
+}
+/*Card titulo tabla*/
+.navbar-custom7 {
+  background-color: #0b345a;
+  /* Cambia este valor al color deseado */
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.help-button-container {
+  margin-left: auto;
+}

@@ -1,0 +1,9 @@
+.icono-peque {
+    font-size: 12px; /* Ajusta el tamaño según tus preferencias */
+}
+
+/*Para el ajustar el tamaño del boton de las opciones*/
+.btn-custom-size {
+    padding: 4px 8px; /* Ajusta el relleno para reducir el tamaño del botón */
+    font-size: 14px; /* Ajusta el tamaño del texto dentro del botón */
+}

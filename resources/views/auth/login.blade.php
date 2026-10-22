@@ -37,7 +37,7 @@
             <span style="color: #ff6b6b; font-size: 13px; display: block; margin-top: 5px; text-align: left;">{{ $message }}</span>
         @enderror
         
-        <!-- Enlace de recuperación de contraseña -->
+        <!-- Recuperación de contraseña -->
         <div style="margin-top: 15px; text-align: left;">
             @if (Route::has('password.request'))
                 <a class="olvidocontra" href="{{ route('password.request') }}">¿Has olvidado tu Contraseña?</a>

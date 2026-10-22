@@ -95,12 +95,10 @@ body {
 
 .contenedor .usuario span {
     position: absolute;
-    right: 0; /* Alineamos el icono a la derecha */
-    bottom: 15px; /* Agregamos un margen inferior para separar el icono de la línea inferior del campo de entrada */
+    right: 5px; /* Lo separamos un poquito del borde derecho */
+    top: 12px;  /* Lo alineamos con el texto del input */
     color: aqua;
-    /* Otros estilos para el icono */
 }
-
 
 .button2 {
     margin: 10px;

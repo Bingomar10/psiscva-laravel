@@ -10,6 +10,10 @@
 @import 'overlayscrollbars/overlayscrollbars.css';
 @import 'admin-lte/dist/css/adminlte.css';
 
+/** Imports agregados */
+@import 'datatables.net-bs5/css/dataTables.bootstrap5.min.css';
+
+
 /*
  * Option B: compile from source to customise SCSS variables. Comment out
  * the admin-lte CSS import above and use this instead (requires `sass`):
@@ -21,3 +25,46 @@
  *
  * See https://adminlte.io/themes/v4/docs/customization.html
  */
+
+ /*Estilos personalizados*/
+ /* Degradado personalizado para el Navbar */
+/* 1. Degradado para el Navbar */
+.app-header {
+    background: linear-gradient(90deg, rgba(32, 136, 223, 1) 0%, rgb(54, 211, 206) 50%, rgba(94, 126, 229, 1) 100%) !important;
+}
+
+/* Forzar texto blanco en el navbar para que resalte */
+.app-header .nav-link,
+.app-header .navbar-brand,
+.app-header .navbar-toggler,
+.app-header .btn {
+    color: #ffffff !important;
+}
+
+/* 2. Degradado para el fondo del contenido  */
+.content-wrapper,
+.app-main {
+    background: linear-gradient(0deg, rgba(226, 244, 246, 1) 0%, rgba(240, 234, 249, 1) 100%) !important;
+}
+
+/* 3. Forzar colores oscuros para el texto sobre el fondo claro */
+.content-wrapper,
+.app-main {
+    color: #333333 !important;
+}
+
+.content-header h1 {
+    color: #1e293b !important;
+    font-weight: bold;
+}
+
+/* 4. Asegurar que las tarjetas (cards) resalten en blanco */
+.card {
+    background-color: #ffffff !important;
+    color: #333333 !important;
+}
+
+.navbar-custom{
+    background-color: #0b345a; 
+    color: #7AE0F2;
+}

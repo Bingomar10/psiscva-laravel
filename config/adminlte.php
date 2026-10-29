@@ -110,7 +110,7 @@ return [
     'layout_fixed_sidebar' => true,   // .layout-fixed
     'layout_fixed_navbar' => true,    // .fixed-header
     'layout_fixed_footer' => null,    // .fixed-footer
-    'layout_dark_mode' => null,       // null = respect system / user toggle
+    'layout_dark_mode' => 'light',       // null = respect system / user toggle
     'layout_rtl' => false,            // Enable right-to-left layout
 
     /*
@@ -124,7 +124,7 @@ return [
     |
     */
 
-    'footer_left' => '<strong>Copyright &copy; '.date('Y').' <a href="https://github.com/Bingomar10/psiscva-laravel" class="text-decoration-none">TBO</a>.</strong> Todos los derechos reservados.',
+    'footer_left' => '<strong class="text-black">Copyright &copy; '.date('Y').' <a href="https://github.com/Bingomar10/psiscva-laravel" class="text-decoration-none">Bingomar</a>.</strong> <span class="text-black">Todos los derechos reservados.</span>',
     'footer_right' => false,
     'preloader' => false,
     'control_sidebar' => false,
@@ -180,12 +180,11 @@ return [
     |
     */
 
-    'sidebar_theme' => 'dark',  // 'dark' | 'light'
-
+    //'sidebar_theme' => 'dark',  // 'dark' | 'light'
     'primary_color' => null,    // brand colour: links, .btn-primary, --bs-primary
-    'sidebar_color' => null,    // .app-sidebar background
-    'navbar_color' => null,     // .app-header background
-    'footer_color' => null,     // .app-footer background
+    'sidebar_color' => '#041a2f',    // .app-sidebar background
+    //'navbar_color' => null,     // .app-header background
+    'footer_color' => '#fff',     // .app-footer background
 
     /*
     |--------------------------------------------------------------------------
@@ -214,7 +213,7 @@ return [
     |
     */
 
-    'color_mode_toggle' => true,
+    'color_mode_toggle' => false,
 
     /*
     |--------------------------------------------------------------------------

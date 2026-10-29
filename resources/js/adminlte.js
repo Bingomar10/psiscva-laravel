@@ -1,3 +1,9 @@
+/**Imports agregados*/
+// Import DataTables y su integración con Bootstrap 5
+import DataTable from 'datatables.net-bs5';
+import languageES from 'datatables.net-plugins/i18n/es-ES.mjs';
+
+
 /**
  * AdminLTE 4 + Bootstrap 5 entry point.
  *
@@ -6,7 +12,8 @@
  */
 
 // Bootstrap (provides dropdowns, modals, tooltips, offcanvas, etc.)
-import 'bootstrap'
+//import 'bootstrap'
+import * as bootstrap from 'bootstrap';
 
 // OverlayScrollbars — AdminLTE uses it for the sidebar scroller (optional)
 import { OverlayScrollbars } from 'overlayscrollbars'
@@ -22,6 +29,13 @@ import 'admin-lte'
  * @pluginScripts directive as global <script> tags, so we feature-detect
  * before touching them.
  */
+
+/* Inicialización de DataTables y traducción al español */ 
+window.bootstrap = bootstrap;
+DataTable.defaults.language = languageES;
+window.DataTable = DataTable;
+/*--------------------------------*/
+
 function whenReady(fn) {
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', fn)

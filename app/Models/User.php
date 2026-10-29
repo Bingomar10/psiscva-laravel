@@ -11,7 +11,6 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable, SoftDeletes;
 
-    // Le decimos a Laravel que use TU tabla
     protected $table = 'usuarios';
 
     // Los campos que se pueden llenar masivamente

@@ -10,7 +10,7 @@ class Empleado extends Model
 {
       use HasFactory, SoftDeletes;
 
-    protected $table = 'empleados'; // Tu tabla real
+    protected $table = 'empleados'; 
     
     protected $fillable = [
         'nombre', 'apellido', 'dui', 'correo', 'telefono', 'foto', 'direccion', 'activo'

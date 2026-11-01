@@ -278,7 +278,24 @@ return [
             'text' => 'Accesos',
             'icon' => 'bi bi-people',
             'submenu' => [
-                ['text' => 'Roles', 'url' => 'roles', 'icon' => 'bi bi-circle'], 
+                [
+                    'text' => 'Empleados',
+                    'url' => 'empleados', 
+                    'icon' => 'bi bi-circle',
+                    'active' => ['empleados*'], 
+                ],
+                [
+                    'text' => 'Usuarios',
+                    'url' => 'usuarios',
+                    'icon' => 'bi bi-circle',
+                     'active' => ['usuarios*'],
+                ],
+                [
+                    'text' => 'Roles',
+                    'url' => 'roles',
+                    'icon' => 'bi bi-circle',
+                    'active' => ['roles*'],
+                ], 
             ],
         ],
         [

@@ -3,6 +3,15 @@
 import DataTable from 'datatables.net-bs5';
 import languageES from 'datatables.net-plugins/i18n/es-ES.mjs';
 
+// -- FilePond (gestión de archivos) ---------------------------------------------
+import * as FilePond from 'filepond';
+import 'filepond/dist/filepond.min.css';
+
+// Importar plugins
+import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
+import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css';
+import FilePondPluginFileValidateSize from 'filepond-plugin-file-validate-size';
+import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
 
 /**
  * AdminLTE 4 + Bootstrap 5 entry point.
@@ -35,6 +44,19 @@ window.bootstrap = bootstrap;
 DataTable.defaults.language = languageES;
 window.DataTable = DataTable;
 /*--------------------------------*/
+
+/*FILEPOND */
+// Registrar los plugins a nivel global
+FilePond.registerPlugin(
+    FilePondPluginImagePreview,
+    FilePondPluginFileValidateSize,
+    FilePondPluginFileValidateType
+);
+
+// Exponer FilePond globalmente para usarlo en cualquier vista
+window.FilePond = FilePond;
+
+//--------------------------------
 
 function whenReady(fn) {
   if (document.readyState === 'loading') {

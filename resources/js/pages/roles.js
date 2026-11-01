@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ==========================================
-    // REFERENCIAS Y VALIDACIÓN
-    // ==========================================
+    // Referencias y validación
     const form = document.getElementById('form_rol');
     const modalElement = document.getElementById('md_rol');
     const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
@@ -15,15 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalInstance = bootstrap.Modal.getOrCreateInstance(modalElement);
     const submitButton = form.querySelector('[type="submit"]');
 
-    // ==========================================
-    // FUNCIÓN CENTRALIZADA PARA FETCH 
-    // ==========================================
+    // Función centralizada para fetch
     async function fetchSeguro(url, options) {
         const response = await fetch(url, options);
         if (!response.ok) {
             let errorMessage = 'Ocurrió un error en el servidor';
             try {
-                //Intentamos obtener el mensaje de error desde la respuesta JSON
+                // Intentamos obtener el mensaje de error desde la respuesta JSON
                 const data = await response.json();
                 errorMessage = data.message || errorMessage;
             } catch (e) {
@@ -34,9 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return await response.json();
     }
 
-    // ==========================================
-    // INICIALIZACIÓN DE DATATABLES 
-    // ==========================================
+    // Inicialización de DataTables
     const table = new DataTable('#tbl_roles', {
         ajax: "/roles/listar", 
         columns: [
@@ -63,22 +57,18 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     });
 
-    // ==========================================
-    // EVENTOS DE INTERFAZ
-    // ==========================================
-    
-    //Abrir Modal
+    // Eventos de interfaz
     document.getElementById('btn_nuevo_rol').addEventListener('click', function() {
-         form.reset(); 
+        form.reset(); 
         document.getElementById('idrol').value = ''; 
         modalTitle.textContent = 'Nuevo Rol'; 
         submitButton.textContent = 'Guardar';
-        //Limpiamos los checkboxes de permisos
+        
+        // Limpiamos los checkboxes de permisos
         document.querySelectorAll('.chk-permiso').forEach(chk => chk.checked = false);
         modalInstance.show();
     });
 
-    //Editar Modal
     document.getElementById('tbl_roles').addEventListener('click', async function(e) {
         const btn = e.target.closest('.btn-editar');
         if (!btn) return;
@@ -89,19 +79,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(`/roles/${id}`, { headers: { 'Accept': 'application/json' } });
             const data = await response.json();
             
-            //Llenamos el formulario
+            // Llenamos el formulario
             document.getElementById('idrol').value = data.id;
             document.getElementById('nombre').value = data.nombre;
 
-            //Marcamos los checkboxes de permisos según los permisos del rol
+            // Marcamos los checkboxes de permisos según los permisos del rol
             const permisosAsignados = data.permisos.map(p => p.id);
             
             document.querySelectorAll('.chk-permiso').forEach(chk => {
-                //Si el ID del checkbox está en la lista de permisosAsignados, lo marcamos
+                // Si el ID del checkbox está en la lista de permisosAsignados, lo marcamos
                 chk.checked = permisosAsignados.includes(parseInt(chk.value));
             });
             
-            // Cambiamos textos del modal
             modalTitle.textContent = 'Editar Rol';
             submitButton.textContent = 'Actualizar';
             
@@ -116,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function cargarPermisos() {
         try {
-            // Hacemos una petición a una ruta que crearemos
             const response = await fetch('/permisos/listar'); 
             todosLosPermisos = await response.json();
             
@@ -139,15 +127,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Llamamos a la función al cargar la página
     cargarPermisos();
 
-    // ==========================================
-    // OPERACIONES HTTP 
-    // ==========================================
-
-    
-    // Guardar 
+    // Operaciones HTTP
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
         const id = document.getElementById('idrol').value;
@@ -159,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const formData = new FormData(form);
 
-        //FormData no soporta PUT, así que enviamos POST con un _method=PUT
+        // FormData no soporta PUT, así que enviamos POST con un _method=PUT
         if (isEdit) formData.append('_method', 'PUT');
 
         const url = isEdit ? `/roles/${id}` : "/roles";
@@ -191,7 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Eliminar 
     document.getElementById('tbl_roles').addEventListener('click', async function(e) {
         const btn = e.target.closest('.btn-eliminar');
         if (!btn) return;

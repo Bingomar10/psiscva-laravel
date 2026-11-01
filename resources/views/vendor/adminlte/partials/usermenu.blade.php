@@ -2,7 +2,7 @@
     $user = auth()->user();
     $name = $user?->nombre_usuario ?? 'Invitado';
     
-    $avatar = asset('vendor/adminlte/img/user2-160x160.jpg'); 
+    $fotoUrl = $user?->empleado?->foto;
     
     $showImage = (bool) config('adminlte.usermenu_image');
     $profileUrl = config('adminlte.usermenu_profile_url');
@@ -10,8 +10,14 @@
 
 <li class="nav-item dropdown user-menu">
     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-        <img src="{{ $avatar }}" class="user-image rounded-circle shadow" alt="{{ $name }}" width="30" height="30">
-        <span class="d-none d-md-inline">{{ $name }}</span>
+        
+        @if($fotoUrl)
+            <img src="{{ $fotoUrl }}" class="user-image rounded-circle shadow" alt="{{ $name }}" style="width: 32px; height: 32px; object-fit: cover;">
+        @else
+            <i class="bi bi-person-circle me-1" style="font-size: 24px; vertical-align: middle;"></i>
+        @endif
+
+        <span class="d-none d-md-inline ms-1">{{ $name }}</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
         

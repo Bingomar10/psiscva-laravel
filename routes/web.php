@@ -41,4 +41,14 @@ Route::middleware('auth')->group(function () {
     Route::put('empleados/{id}', [EmpleadoController::class, 'editar'])->name('empleados.editar');
     Route::delete('empleados/{id}', [EmpleadoController::class, 'eliminar'])->name('empleados.eliminar');
 
+    // --- RUTAS MANUALES PARA USUARIOS ---
+    Route::get('usuarios', [App\Http\Controllers\UsuarioController::class, 'index'])->name('usuarios.index');
+    Route::get('usuarios/listar', [App\Http\Controllers\UsuarioController::class, 'listar'])->name('usuarios.listar');
+    // Ruta para generar el nombre y obtener los select
+    Route::get('usuarios/datos-formulario', [App\Http\Controllers\UsuarioController::class, 'datosFormulario'])->name('usuarios.datos');
+    Route::post('usuarios', [App\Http\Controllers\UsuarioController::class, 'guardar'])->name('usuarios.guardar');
+    Route::get('usuarios/{id}', [App\Http\Controllers\UsuarioController::class, 'mostrar'])->name('usuarios.mostrar');
+    Route::put('usuarios/{id}', [App\Http\Controllers\UsuarioController::class, 'editar'])->name('usuarios.editar');
+    //Route::delete('usuarios/{id}', [App\Http\Controllers\UsuarioController::class, 'eliminar'])->name('usuarios.eliminar');
+    Route::patch('usuarios/{id}/estado', [App\Http\Controllers\UsuarioController::class, 'cambiarEstado'])->name('usuarios.estado');
 });

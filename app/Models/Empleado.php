@@ -15,4 +15,8 @@ class Empleado extends Model
     protected $fillable = [
         'nombre', 'apellido', 'dui', 'correo', 'telefono', 'foto', 'foto_public_id','direccion', 'activo'
     ];
+
+    public function usuario() {
+        return $this->hasOne(User::class, 'empleado_id');
+    }
 }

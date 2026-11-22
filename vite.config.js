@@ -11,6 +11,7 @@ export default defineConfig({
                 'resources/js/adminlte.js',
                 'resources/js/pages/roles.js',
                 'resources/js/pages/empleados.js',
+                'resources/js/pages/usuarios.js',
             ],
             refresh: true,
         }),
